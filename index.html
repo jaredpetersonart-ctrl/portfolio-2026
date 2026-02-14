@@ -18,32 +18,25 @@
         .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
         .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
-        /* REVEAL SYSTEM */
+        /* REVEAL SYSTEM - Using your uploaded paper_tear.png */
         .portfolio-group { position: relative; width: 100%; }
         .top-tear { position: absolute; top: -300px; left: 0; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat bottom center; background-size: 100% auto; z-index: 100; pointer-events: none; }
         .white-reveal { background-color: #ffffff; position: relative; z-index: 10; margin-top: 200px; padding: 80px 60px 0 60px; color: #000000; }
-        .bottom-tear { position: relative; margin-top: -20px; width: 100%; height: 350px; background: url('images/BOTTOM_TEAR.png') no-repeat top center; background-size: 100% auto; z-index: 100; pointer-events: none; }
+        /* Flipped the top tear to act as the bottom tear */
+        .bottom-tear { position: relative; margin-top: -20px; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat top center; background-size: 100% auto; z-index: 100; pointer-events: none; transform: scaleY(-1); }
 
-        /* GLOBAL ADJUSTMENT: Pulls the Poster group AND everything below it up 100px */
+        /* GLOBAL ADJUSTMENT */
         .global-portfolio-slide { margin-top: -100px; }
 
-        /* KOPI SECTION: Maintains its specific overlap with the group above it */
+        /* KOPI SECTION */
         .kopi-full-width-section { position: relative; margin-top: -340px; z-index: 5; }
         .poster-item { margin-bottom: 60px; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
-        /* VIDEO STYLING & LABELS */
+        /* VIDEO STYLING */
         .video-container { margin-bottom: 40px; }
-        video { width: 100%; height: auto; display: block; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: #000; }
-        .video-label { 
-            display: block; 
-            margin-top: 15px; 
-            font-size: 0.8rem; 
-            font-weight: 800; 
-            text-transform: uppercase; 
-            letter-spacing: 1px; 
-            color: #000000; 
-        }
+        .video-placeholder { background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333; color: #444; font-weight: 800; text-transform: uppercase; font-size: 0.7rem; }
+        .video-label { display: block; margin-top: 15px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #000000; }
     </style>
 </head>
 <body>
@@ -66,9 +59,14 @@
         <div class="row">
             <div class="col-lg-7">
                 <h1 style="font-size: 2.8rem; font-weight: 700;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
+                <div class="d-flex gap-2 mt-4">
+                    <img src="images/icon_ps.png" width="30">
+                    <img src="images/icon_ai.png" width="30">
+                    <img src="images/icon_id.png" width="30">
+                </div>
             </div>
             <div class="col-lg-5">
-                <img src="images/POLAROID_INFO.png" style="width:100%;" alt="Contact Info" />
+                <img src="images/POLAROID_INFO.png" style="width:100%;" alt="Bio Info" />
             </div>
         </div>
     </section>
@@ -81,7 +79,7 @@
                     <div class="col-md-6 poster-item"><img src="images/HYPOCYCLOID.png" style="width:100%;" alt="Poster 1" /></div>
                     <div class="col-md-6 poster-item"><img src="images/GARAMOND.png" style="width:100%;" alt="Poster 2" /></div>
                     <div class="col-md-6 poster-item"><img src="images/PYGMALION.png" style="width:100%;" alt="Poster 3" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/PYGMALION.png" style="width:100%;" alt="Poster 4" /></div>
+                    <div class="col-md-6 poster-item"><img src="images/SKETCHBOOK.png" style="width:100%;" alt="Poster 4" /></div>
                 </div>
             </div>
         </section>
@@ -105,20 +103,12 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video>
+                        <div class="video-placeholder">Defense.mp4 (Pending)</div>
                         <span class="video-label">Maroon Defense</span>
                     </div>
                     <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video>
+                        <div class="video-placeholder">Third_Down.mp4 (Pending)</div>
                         <span class="video-label">Third Down</span>
-                    </div>
-                    <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/FOURTH_QUARTER.MP4" type="video/mp4"></video>
-                        <span class="video-label">Fourth Quarter</span>
-                    </div>
-                    <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/RISEUP.MP4" type="video/mp4"></video>
-                        <span class="video-label">Rise Up</span>
                     </div>
                 </div>
             </div>
