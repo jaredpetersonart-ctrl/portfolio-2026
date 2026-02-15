@@ -9,8 +9,8 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* HERO AND BIO */
-        .hero-section { position: relative; width: 100%; display: block; }
+        /* HERO SECTION */
+        .hero-section { position: relative; width: 100%; display: block; overflow: visible; }
         .sketchbook-container { width: 75%; position: relative; padding: 20px 0 20px 20px; }
         .sketchbook-img { width: 100%; height: auto; display: block; }
         .title-alignment-layer { position: absolute; bottom: 55px; left: -104px; width: 100%; display: flex; align-items: baseline; pointer-events: none; z-index: 50; }
@@ -18,24 +18,32 @@
         .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
         .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
-        /* REVEAL SYSTEM - Using your uploaded paper_tear.png */
+        /* POLAROID PHOTO FIX */
+        .polaroid-container { position: relative; width: 100%; }
+        .headshot-overlay { position: absolute; top: 12%; left: 11%; width: 78%; height: 60%; object-fit: cover; z-index: 1; }
+        .polaroid-frame { position: relative; width: 100%; z-index: 2; }
+
+        /* REVEAL SYSTEM */
         .portfolio-group { position: relative; width: 100%; }
         .top-tear { position: absolute; top: -300px; left: 0; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat bottom center; background-size: 100% auto; z-index: 100; pointer-events: none; }
-        .white-reveal { background-color: #ffffff; position: relative; z-index: 10; margin-top: 200px; padding: 80px 60px 0 60px; color: #000000; }
-        /* Flipped the top tear to act as the bottom tear */
+        .white-reveal { background-color: #ffffff; position: relative; z-index: 10; margin-top: 200px; padding: 80px 60px 40px 60px; color: #000000; }
         .bottom-tear { position: relative; margin-top: -20px; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat top center; background-size: 100% auto; z-index: 100; pointer-events: none; transform: scaleY(-1); }
 
-        /* GLOBAL ADJUSTMENT */
-        .global-portfolio-slide { margin-top: -100px; }
+        /* POSTER STYLING & SHADOW */
+        .poster-item { margin-bottom: 60px; }
+        .poster-shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.25); transition: transform 0.3s ease; }
+        .poster-shadow:hover { transform: translateY(-5px); }
 
         /* KOPI SECTION */
-        .kopi-full-width-section { position: relative; margin-top: -340px; z-index: 5; }
-        .poster-item { margin-bottom: 60px; }
+        .kopi-full-width-section { position: relative; margin-top: -235px; z-index: 5; background-color: #0b0b0b; padding-bottom: 100px; }
         .full-width-img { width: 100%; height: auto; display: block; }
+
+        /* FOOTBALL SECTION - TIGHTENED SPACING */
+        .football-group { position: relative; margin-top: -100px; z-index: 10; }
 
         /* VIDEO STYLING */
         .video-container { margin-bottom: 40px; }
-        .video-placeholder { background: #000; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; border: 1px solid #333; color: #444; font-weight: 800; text-transform: uppercase; font-size: 0.7rem; }
+        video { width: 100%; height: auto; display: block; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: #000; }
         .video-label { display: block; margin-top: 15px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #000000; }
     </style>
 </head>
@@ -44,7 +52,7 @@
 <div class="portfolio-wrapper">
     <section class="hero-section">
         <div class="sketchbook-container">
-            <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Sketchbook" />
+            <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Sketchbook Illustration" />
         </div>
         <div class="title-alignment-layer">
             <div class="port-label">PORT</div>
@@ -58,28 +66,54 @@
     <section class="container-fluid bio-section" style="padding: 80px 60px;">
         <div class="row">
             <div class="col-lg-7">
-                <h1 style="font-size: 2.8rem; font-weight: 700;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
-                <div class="d-flex gap-2 mt-4">
-                    <img src="images/icon_ps.png" width="30">
-                    <img src="images/icon_ai.png" width="30">
-                    <img src="images/icon_id.png" width="30">
+                <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 30px;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
+                <div class="row">
+                    <div class="col-md-6" style="line-height: 1.2;">
+                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Experience</p>
+                        <p style="margin-bottom: 2px;">2018-2026</p>
+                        <p style="margin-bottom: 2px;">Freelance Designer &amp; Illustrator</p>
+                        <p style="margin-bottom: 2px; margin-top: 10px;">2019-2025</p>
+                        <p style="margin-bottom: 2px;">Graphic design</p>
+                        <p style="margin-bottom: 15px;">Café Kopi LLC</p>
+                        
+                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Education</p>
+                        <p style="margin-bottom: 2px;">1995-1997 - Parkland College</p>
+                        <p style="margin-bottom: 2px;">Mass Communications in the Visual Arts</p>
+                        <p style="margin-bottom: 2px;">2019-2020 - Parkland College</p>
+                        <p style="margin-bottom: 0;">Graphic Design</p>
+                    </div>
+                    <div class="col-md-6" style="line-height: 1.2;">
+                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Achievements</p>
+                        <p style="margin-bottom: 2px;">2019 - Hypocycloid poster Winner</p>
+                        <p style="margin-bottom: 2px;">2019 - Math Department Graphic Award</p>
+                        <p style="margin-bottom: 15px;">2020 - Giertz Gallery Juried Exhibition</p>
+                        
+                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">SKILLS</p>
+                        <p style="margin-bottom: 15px;">Digital Illustration, Motion Graphics</p>
+
+                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Programs</p>
+                        <p style="margin-bottom: 0;">Ps, Id, Ai, Pr, Dw</p>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5">
-                <img src="images/POLAROID_INFO.png" style="width:100%;" alt="Bio Info" />
+                <div class="polaroid-container">
+                    <img src="images/ME.png" class="headshot-overlay" alt="Jared Profile Photo" />
+                    <img src="images/POLAROID_INFO.png" class="polaroid-frame" alt="Contact Information Polaroid" />
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="portfolio-group global-portfolio-slide">
+    <div class="portfolio-group" style="margin-top: -100px;">
         <div class="top-tear"></div> 
         <section class="white-reveal">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-6 poster-item"><img src="images/HYPOCYCLOID.png" style="width:100%;" alt="Poster 1" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/GARAMOND.png" style="width:100%;" alt="Poster 2" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/PYGMALION.png" style="width:100%;" alt="Poster 3" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/SKETCHBOOK.png" style="width:100%;" alt="Poster 4" /></div>
+                    <div class="col-md-6 poster-item"><img src="images/2x/HYPOCYCLOID.png" class="full-width-img poster-shadow" alt="Hypocycloid Poster" /></div>
+                    <div class="col-md-6 poster-item"><img src="images/2x/GARAMOND.png" class="full-width-img poster-shadow" alt="Garamond Poster" /></div>
+                    <div class="col-md-6 poster-item"><img src="images/2x/PYGMALION.png" class="full-width-img poster-shadow" alt="Pygmalion Poster" /></div>
+                    <div class="col-md-6 poster-item"><img src="images/2x/BATMAN_ROBIN.png" class="full-width-img poster-shadow" alt="Batman Poster" /></div>
                 </div>
             </div>
         </section>
@@ -87,12 +121,12 @@
     </div>
 
     <section class="kopi-full-width-section">
-        <img src="images/KOPI_HERO.png" class="full-width-img" alt="Cafe Kopi" />
+        <img src="images/KOPI_HERO.png" class="full-width-img" alt="Cafe Kopi Hero" />
         <img src="images/KOPI_WORDMARKS.png" class="full-width-img" alt="Kopi Logos" />
         <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <div class="portfolio-group">
+    <div class="portfolio-group football-group">
         <div class="top-tear"></div> 
         <section class="white-reveal">
             <div class="container-fluid">
@@ -103,11 +137,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 video-container">
-                        <div class="video-placeholder">Defense.mp4 (Pending)</div>
+                        <video controls preload="auto"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video>
                         <span class="video-label">Maroon Defense</span>
                     </div>
                     <div class="col-md-6 video-container">
-                        <div class="video-placeholder">Third_Down.mp4 (Pending)</div>
+                        <video controls preload="auto"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video>
                         <span class="video-label">Third Down</span>
                     </div>
                 </div>
