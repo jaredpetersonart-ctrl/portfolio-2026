@@ -9,82 +9,66 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* HERO SECTION */
-        .hero-section { position: relative; width: 100%; z-index: 10; }
-        .sketchbook-container { width: 75%; padding: 20px 0 20px 20px; }
-        .sketchbook-img { width: 100%; height: auto; display: block; }
-        .title-alignment-layer { position: absolute; bottom: 55px; left: -104px; width: 100%; display: flex; align-items: baseline; pointer-events: none; z-index: 50; }
-        .port-label { margin-left: auto; margin-right: 55px; color: #121212; font-weight: 900; font-size: 5.5rem; letter-spacing: -2px; }
-        .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
-
-        /* BIO SECTION: Elevated so it stays on top of the paper tear */
-        .bio-section { padding: 40px 60px; position: relative; z-index: 50; } 
+        /* BIO SECTION - Lowered so paper overlaps it */
+        .bio-section { padding: 40px 60px; position: relative; z-index: 5; } 
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
 
-        /* THE SINGLE IMAGE SANDWICH (Bottom Layer) */
-        .paper-sandwich-section {
+        /* THE PAPER REVEAL (Now a Container for posters) */
+        .paper-reveal-section {
             width: 100%;
-            background: url('images/WHITE_TORN.png') no-repeat center top;
-            background-size: 100% auto; 
-            padding-top: 300%; /* Adjust this percentage to fit your image height */
-            margin-top: -220px; 
-            margin-bottom: -180px; 
             position: relative;
-            z-index: 1; 
+            z-index: 100; /* Stays on top of Bio and Kopi */
+            margin-top: -240px; 
+            margin-bottom: -200px;
+            /* Using your torn paper as the background for the whole div */
+            background: url('images/WHITE_TORN.png') no-repeat center top;
+            background-size: 100% 100%; /* Stretches the paper to fit the posters */
+            padding: 250px 80px; /* Padding keeps posters away from the ripped edges */
         }
 
-        /* KOPI SECTION: Mid-layer */
-        .kopi-full-width-section { 
-            background-color: #0b0b0b; 
-            position: relative; 
-            z-index: 20; 
-            padding-top: 80px;
-            padding-bottom: 80px; 
-        }
+        .poster-img { width: 100%; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 40px; }
+        
+        /* KOPI SECTION */
+        .kopi-full-width-section { background-color: #0b0b0b; position: relative; z-index: 10; padding: 100px 0; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
-        /* FOOTBALL ADJUSTMENT: Ensuring the second tear starts correctly */
-        .football-sandwich {
-            margin-top: -200px !important; /* Pulls the second paper up over the Kopi bottom */
-            z-index: 1 !important;
+        /* FOOTBALL SECTION (Fictional 2026 Stats) */
+        .football-section {
+            width: 100%;
+            position: relative;
+            z-index: 100;
+            margin-top: -180px;
+            background: url('images/WHITE_TORN.png') no-repeat center top;
+            background-size: 100% 100%;
+            padding: 200px 80px;
         }
 
         @media (max-width: 768px) {
-            .paper-sandwich-section { margin-top: -120px; padding-top: 400%; }
-            .title-alignment-layer { position: relative; left: 0; bottom: 0; margin-top: -30px; }
-            .football-sandwich { margin-top: -100px !important; }
+            .paper-reveal-section { padding: 150px 20px; margin-top: -140px; }
         }
     </style>
 </head>
 <body>
 
 <div class="portfolio-wrapper">
-    <section class="hero-section">
-        <div class="sketchbook-container">
-            <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Sketchbook" />
+    <section class="hero-section" style="position:relative; z-index:10;">
+        <div class="sketchbook-container" style="width:75%; padding:20px;">
+            <img src="images/SKETCHBOOK.png" style="width:100%;" alt="Sketchbook" />
         </div>
-        <div class="title-alignment-layer">
-            <div class="port-label">PORT</div>
-            <div class="folio-group">
-                <div class="folio-label">FOLIO</div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <section class="container-fluid bio-section">
         <div class="row align-items-center">
             <div class="col-lg-7">
                 <h1>Hello! I&apos;m Jared, an illustrator and designer.</h1>
-                <div class="row text-start">
+                <div class="row">
                     <div class="col-md-6">
                         <p class="section-header">Experience</p>
                         <p><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
-                        <p><strong>2019-2025</strong><br>Graphic Design | Café Kopi LLC</p>
                     </div>
                     <div class="col-md-6">
                         <p class="section-header">Achievements</p>
                         <p>2019 - Hypocycloid Winner</p>
-                        <p>2020 - Giertz Juried Exhibition</p>
                     </div>
                 </div>
             </div>
@@ -94,16 +78,32 @@
         </div>
     </section>
 
-    <div class="paper-sandwich-section"></div>
+    <div class="paper-reveal-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6"><img src="images/HYPOCYCLOID.png" class="poster-img" alt="Hypocycloid" /></div>
+                <div class="col-md-6"><img src="images/GARAMOND.png" class="poster-img" alt="Garamond" /></div>
+                <div class="col-md-6"><img src="images/PYGMALION.png" class="poster-img" alt="Pygmalion" /></div>
+                <div class="col-md-6"><img src="images/BATMAN_ROBIN.png" class="poster-img" alt="Batman and Robin" /></div>
+            </div>
+        </div>
+    </div>
 
     <section class="kopi-full-width-section">
         <img src="images/KOPI_HERO.png" class="full-width-img" alt="Kopi Hero" />
         <img src="images/KOPI_WORDMARKS.png" class="full-width-img" alt="Kopi Logos" />
-        <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <div class="paper-sandwich-section football-sandwich"></div>
-
+    <div class="football-section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2 style="color:black; font-weight:900;">2026 SEASON RECAP</h2>
+                    <img src="images/2021_schedule.png" class="poster-img" style="max-width:800px; margin: 0 auto;" alt="Fictional Stats" />
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 </body>
