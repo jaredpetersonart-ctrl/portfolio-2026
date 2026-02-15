@@ -6,8 +6,24 @@
     <title>Jared | Portfolio 2026</title>
     <link href="css/bootstrap-5.3.8.css" rel="stylesheet" />
     <style>
-        body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
-        .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
+        /* 1. ALLOW THE TEARS TO OVERFLOW THE SIDES */
+        html, body { 
+            background-color: #0b0b0b; 
+            color: #ffffff; 
+            margin: 0; 
+            padding: 0; 
+            font-family: sans-serif; 
+            overflow-x: hidden; /* This stays on the body to prevent side-scrolling */
+        }
+
+        .portfolio-wrapper { 
+            width: 100%; 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            background-color: #121212; 
+            position: relative; 
+            /* REMOVED overflow-x: hidden here so tears can bleed out */
+        }
         
         /* HERO & BIO */
         .hero-section { position: relative; width: 100%; overflow: visible; }
@@ -25,57 +41,69 @@
         .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #1a1a1a; }
         .polaroid-frame { position: relative; width: 100%; z-index: 2; }
 
-        /* REVEAL SYSTEM - THE ANCHORED STICKER */
-        .portfolio-group { position: relative; width: 100%; margin-top: 180px; z-index: 20; }
+        /* REVEAL SYSTEM - THE FULL-BLEED FIX */
+        .portfolio-group { 
+            position: relative; 
+            width: 100%; 
+            margin-top: 180px; 
+            z-index: 20; 
+        }
         
         .top-tear { 
             position: absolute; 
-            bottom: 100%; /* Sits on top of the white block */
-            left: 0;
-            width: 100%; 
+            bottom: 100%; 
+            left: -5%; /* Pulls the tear slightly left past the edge */
+            width: 110%; /* Makes the tear wider than the container */
             height: 250px; 
             background: url('images/paper_tear.png') no-repeat bottom center; 
             background-size: 100% auto; 
             z-index: 25; 
-            margin-bottom: -2px; /* The "Weld" to prevent any gap */
+            margin-bottom: -5px; 
         }
         
         .white-reveal { 
             background-color: #ffffff; 
-            padding: 40px 60px; 
+            padding: 80px 60px; 
             color: #000000; 
             position: relative; 
             z-index: 10;
         }
         
         .bottom-tear { 
-            width: 100%; 
+            position: absolute;
+            top: 100%;
+            left: -5%; /* Pulls the tear slightly left past the edge */
+            width: 110%; /* Makes the tear wider than the container */
             height: 250px; 
             background: url('images/paper_tear.png') no-repeat top center; 
             background-size: 100% auto; 
-            margin-top: -15px; 
-            margin-bottom: -150px; /* Pulls next section up under the tear */
+            z-index: 25; 
+            margin-top: -5px; 
             transform: scaleY(-1);
-            position: relative;
-            z-index: 21;
         }
 
-        /* CONTENT STYLES */
+        /* IMAGES & SPACING */
         .full-width-img { width: 100%; height: auto; display: block; }
         .poster-item { margin-bottom: 60px; }
         .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
 
-        .kopi-full-width-section { background-color: #0b0b0b; position: relative; z-index: 5; padding-bottom: 80px; }
-        .football-group { margin-top: 150px !important; }
+        .kopi-full-width-section { 
+            background-color: #0b0b0b; 
+            position: relative; 
+            z-index: 5; 
+            padding-top: 200px; 
+            padding-bottom: 80px; 
+        }
+
+        .football-group { margin-top: 300px !important; }
 
         /* MOBILE FIXES */
         @media (max-width: 768px) {
             .portfolio-group { margin-top: 100px; }
-            .top-tear { height: 120px; }
-            .white-reveal { padding: 20px 15px; }
-            .bottom-tear { height: 120px; margin-bottom: -80px; }
-            .bio-section { padding: 20px 20px; }
-            .football-group { margin-top: 80px !important; }
+            .top-tear, .bottom-tear { height: 120px; width: 120%; left: -10%; }
+            .white-reveal { padding: 40px 15px; }
+            .kopi-full-width-section { padding-top: 100px; }
+            .football-group { margin-top: 150px !important; }
         }
     </style>
 </head>
