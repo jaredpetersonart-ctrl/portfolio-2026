@@ -6,7 +6,7 @@
     <title>Jared | Portfolio 2026</title>
     <link href="css/bootstrap-5.3.8.css" rel="stylesheet" />
     <style>
-        body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; }
+        body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
         /* HERO SECTION */
@@ -18,9 +18,12 @@
         .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
         .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
-        /* POLAROID FIX */
-        .polaroid-container { position: relative; width: 100%; }
-        .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #222; }
+        /* BIO & POLAROID */
+        .bio-section { padding: 100px 60px; }
+        .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
+        .bio-text { margin-bottom: 20px; line-height: 1.4; }
+        .polaroid-container { position: relative; width: 100%; max-width: 450px; margin: 0 auto; }
+        .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #1a1a1a; }
         .polaroid-frame { position: relative; width: 100%; z-index: 2; }
 
         /* REVEAL SYSTEM */
@@ -29,22 +32,32 @@
         .white-reveal { background-color: #ffffff; position: relative; z-index: 10; margin-top: 200px; padding: 80px 60px 40px 60px; color: #000000; }
         .bottom-tear { position: relative; margin-top: -20px; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat top center; background-size: 100% auto; z-index: 100; pointer-events: none; transform: scaleY(-1); }
 
-        /* POSTER SHADOWS */
+        /* POSTERS */
         .full-width-img { width: 100%; height: auto; display: block; }
         .poster-item { margin-bottom: 60px; }
         .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: transform 0.3s ease; }
-        .poster-shadow:hover { transform: translateY(-8px); }
 
-        /* KOPI SECTION */
+        /* KOPI & FOOTBALL */
         .kopi-full-width-section { position: relative; margin-top: -235px; z-index: 5; background-color: #0b0b0b; padding-bottom: 80px; }
-
-        /* FOOTBALL SECTION */
         .football-group { position: relative; margin-top: -80px; z-index: 10; }
-
-        /* VIDEO STYLING */
+        
+        /* VIDEO */
         .video-container { margin-bottom: 40px; }
-        video { width: 100%; height: auto; display: block; box-shadow: 0 15px 35px rgba(0,0,0,0.15); background: #000; }
+        video { width: 100%; height: auto; display: block; background: #000; }
         .video-label { display: block; margin-top: 15px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #000000; }
+
+        /* --- MOBILE RESPONSIVE TWEAKS --- */
+        @media (max-width: 768px) {
+            .sketchbook-container { width: 90%; padding: 10px; }
+            .title-alignment-layer { position: relative; left: 0; bottom: 0; flex-direction: column; align-items: center; margin-top: -40px; }
+            .port-label { margin: 0; font-size: 3.5rem; color: #ffffff; }
+            .folio-label { font-size: 3.5rem; }
+            .bio-section { padding: 40px 20px; text-align: center; }
+            .white-reveal { margin-top: 100px; padding: 40px 20px; }
+            .top-tear { top: -150px; height: 180px; }
+            .bottom-tear { height: 180px; }
+            .kopi-full-width-section { margin-top: -100px; }
+        }
     </style>
 </head>
 <body>
@@ -63,37 +76,33 @@
         </div>
     </section>
 
-    <section class="container-fluid bio-section" style="padding: 80px 60px;">
-        <div class="row">
+    <section class="container-fluid bio-section">
+        <div class="row align-items-center">
             <div class="col-lg-7">
-                <h1 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 30px;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
-                <div class="row">
-                    <div class="col-md-6" style="line-height: 1.2;">
-                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Experience</p>
-                        <p style="margin-bottom: 2px;">2018-2026 — Freelance Designer &amp; Illustrator</p>
-                        <p style="margin-bottom: 2px; margin-top: 10px;">2019-2025 — Graphic design</p>
-                        <p style="margin-bottom: 15px;">Café Kopi LLC</p>
-                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Education</p>
-                        <p style="margin-bottom: 2px;">1995-1997 - Parkland College</p>
-                        <p style="margin-bottom: 2px;">Mass Communications in the Visual Arts</p>
-                        <p style="margin-bottom: 2px;">2019-2020 - Parkland College</p>
-                        <p style="margin-bottom: 0;">Graphic Design</p>
+                <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
+                <div class="row text-start">
+                    <div class="col-md-6 bio-text">
+                        <p class="section-header">Experience</p>
+                        <p style="margin-bottom: 4px;"><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
+                        <p style="margin-bottom: 20px;"><strong>2019-2025</strong><br>Graphic Design | Café Kopi LLC</p>
+                        <p class="section-header">Education</p>
+                        <p style="margin-bottom: 4px;"><strong>1995-1997</strong> - Parkland College<br>Visual Arts / Mass Comm</p>
+                        <p><strong>2019-2020</strong> - Parkland College<br>Graphic Design</p>
                     </div>
-                    <div class="col-md-6" style="line-height: 1.2;">
-                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Achievements</p>
-                        <p style="margin-bottom: 2px;">2019 - Hypocycloid poster Winner</p>
-                        <p style="margin-bottom: 2px;">2019 - Math Department Graphic Award</p>
-                        <p style="margin-bottom: 15px;">2020 - Giertz Gallery Juried Exhibition</p>
-                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">SKILLS</p>
-                        <p style="margin-bottom: 15px;">Digital Illustration, Motion Graphics</p>
-                        <p style="font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: #e83e35;">Programs</p>
-                        <p style="margin-bottom: 0;">Ps, Id, Ai, Pr, Dw</p>
+                    <div class="col-md-6 bio-text">
+                        <p class="section-header">Achievements</p>
+                        <p style="margin-bottom: 4px;">2019 - Hypocycloid Poster Winner</p>
+                        <p style="margin-bottom: 4px;">2019 - Math Dept Graphic Award</p>
+                        <p style="margin-bottom: 20px;">2020 - Giertz Gallery Juried Exhibition</p>
+                        <p class="section-header">Expertise</p>
+                        <p style="margin-bottom: 4px;">Digital Illustration, Motion Graphics</p>
+                        <p><strong>Programs:</strong> Ps, Id, Ai, Pr, Dw</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="polaroid-container">
-                    <img src="images/ME.png" class="headshot-overlay" alt="Profile Photo" />
+                    <img src="images/ME.png" class="headshot-overlay" alt="Profile Photo Placeholder" />
                     <img src="images/POLAROID_INFO.png" class="polaroid-frame" alt="Contact Polaroid" />
                 </div>
             </div>
