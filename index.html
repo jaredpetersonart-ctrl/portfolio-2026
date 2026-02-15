@@ -19,7 +19,7 @@
         .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
         /* BIO & POLAROID */
-        .bio-section { padding: 100px 60px; }
+        .bio-section { padding: 80px 60px; }
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
         .bio-text { margin-bottom: 20px; line-height: 1.4; }
         .polaroid-container { position: relative; width: 100%; max-width: 450px; margin: 0 auto; }
@@ -42,21 +42,31 @@
         .football-group { position: relative; margin-top: -80px; z-index: 10; }
         
         /* VIDEO */
-        .video-container { margin-bottom: 40px; }
-        video { width: 100%; height: auto; display: block; background: #000; }
         .video-label { display: block; margin-top: 15px; font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; color: #000000; }
 
-        /* --- MOBILE RESPONSIVE TWEAKS --- */
+        /* --- MOBILE MEDIA QUERY (The iPhone Fix) --- */
         @media (max-width: 768px) {
-            .sketchbook-container { width: 90%; padding: 10px; }
-            .title-alignment-layer { position: relative; left: 0; bottom: 0; flex-direction: column; align-items: center; margin-top: -40px; }
-            .port-label { margin: 0; font-size: 3.5rem; color: #ffffff; }
-            .folio-label { font-size: 3.5rem; }
-            .bio-section { padding: 40px 20px; text-align: center; }
+            .sketchbook-container { width: 100%; padding: 10px; }
+            .title-alignment-layer { 
+                position: relative; left: 0; bottom: 0; 
+                flex-direction: column; align-items: center; 
+                margin-top: -50px; padding: 20px;
+            }
+            .port-label { margin: 0; font-size: 4rem; color: #ffffff; text-align: center; }
+            .folio-label { font-size: 4rem; text-align: center; }
+            .sub-label { text-align: center; letter-spacing: 2px; }
+            
+            .bio-section { padding: 40px 20px; }
+            .bio-section h1 { font-size: 2rem; text-align: center; }
+            .bio-text { text-align: center; }
+            .polaroid-container { margin-top: 30px; }
+
             .white-reveal { margin-top: 100px; padding: 40px 20px; }
-            .top-tear { top: -150px; height: 180px; }
-            .bottom-tear { height: 180px; }
+            .top-tear { top: -180px; height: 200px; }
+            .bottom-tear { height: 200px; }
+            
             .kopi-full-width-section { margin-top: -100px; }
+            .football-group { margin-top: 0; }
         }
     </style>
 </head>
@@ -79,37 +89,30 @@
     <section class="container-fluid bio-section">
         <div class="row align-items-center">
             <div class="col-lg-7">
-                <h1 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 30px;">Hello! I&apos;m Jared, an illustrator and designer.</h1>
-                <div class="row text-start">
+                <h1>Hello! I&apos;m Jared, an illustrator and designer.</h1>
+                <div class="row">
                     <div class="col-md-6 bio-text">
                         <p class="section-header">Experience</p>
-                        <p style="margin-bottom: 4px;"><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
-                        <p style="margin-bottom: 20px;"><strong>2019-2025</strong><br>Graphic Design | Café Kopi LLC</p>
-                        <p class="section-header">Education</p>
-                        <p style="margin-bottom: 4px;"><strong>1995-1997</strong> - Parkland College<br>Visual Arts / Mass Comm</p>
-                        <p><strong>2019-2020</strong> - Parkland College<br>Graphic Design</p>
+                        <p><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
+                        <p><strong>2019-2025</strong><br>Graphic Design | Café Kopi LLC</p>
                     </div>
                     <div class="col-md-6 bio-text">
                         <p class="section-header">Achievements</p>
-                        <p style="margin-bottom: 4px;">2019 - Hypocycloid Poster Winner</p>
-                        <p style="margin-bottom: 4px;">2019 - Math Dept Graphic Award</p>
-                        <p style="margin-bottom: 20px;">2020 - Giertz Gallery Juried Exhibition</p>
-                        <p class="section-header">Expertise</p>
-                        <p style="margin-bottom: 4px;">Digital Illustration, Motion Graphics</p>
-                        <p><strong>Programs:</strong> Ps, Id, Ai, Pr, Dw</p>
+                        <p>2019 - Hypocycloid Winner</p>
+                        <p>2020 - Giertz Juried Exhibition</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5">
                 <div class="polaroid-container">
-                    <img src="images/ME.png" class="headshot-overlay" alt="Profile Photo Placeholder" />
-                    <img src="images/POLAROID_INFO.png" class="polaroid-frame" alt="Contact Polaroid" />
+                    <img src="images/ME.png" class="headshot-overlay" alt="Profile Photo" />
+                    <img src="images/POLAROID_INFO.png" class="polaroid-frame" alt="Contact" />
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="portfolio-group" style="margin-top: -100px;">
+    <div class="portfolio-group">
         <div class="top-tear"></div> 
         <section class="white-reveal">
             <div class="container-fluid">
@@ -138,16 +141,8 @@
                     <div class="col-12 poster-item">
                         <img src="images/2021_schedule.png" class="full-width-img" alt="Schedule" />
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video>
-                        <span class="video-label">Maroon Defense</span>
-                    </div>
-                    <div class="col-md-6 video-container">
-                        <video controls preload="auto"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video>
-                        <span class="video-label">Third Down</span>
-                    </div>
+                    <div class="col-md-6"><video controls><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video></div>
+                    <div class="col-md-6"><video controls><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video></div>
                 </div>
             </div>
         </section>
