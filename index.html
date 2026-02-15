@@ -18,7 +18,7 @@
         .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
         .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
-        /* BIO & POLAROID */
+        /* BIO SECTION */
         .bio-section { padding: 80px 60px; position: relative; z-index: 1; }
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
         .bio-text { margin-bottom: 20px; line-height: 1.4; }
@@ -26,16 +26,17 @@
         .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #1a1a1a; }
         .polaroid-frame { position: relative; width: 100%; z-index: 2; }
 
-        /* REVEAL SYSTEM - NO MORE FLOATING GAPS */
-        .portfolio-group { position: relative; width: 100%; margin-top: 200px; }
+        /* REVEAL SYSTEM - THE GAP KILLER */
+        .portfolio-group { position: relative; width: 100%; margin-top: 150px; }
         
-        /* Top Tear: Now a direct block before the white section */
         .top-tear { 
             width: 100%; 
             height: 250px; 
             background: url('images/paper_tear.png') no-repeat bottom center; 
             background-size: 100% auto; 
-            margin-bottom: -1px; /* Overlap fix */
+            margin-bottom: -10px; /* Forces overlap with white block */
+            position: relative;
+            z-index: 11;
         }
         
         .white-reveal { 
@@ -46,41 +47,40 @@
             z-index: 10;
         }
         
-        /* Bottom Tear: Anchored to the bottom of the white block */
         .bottom-tear { 
             width: 100%; 
             height: 250px; 
             background: url('images/paper_tear.png') no-repeat top center; 
             background-size: 100% auto; 
-            margin-top: -1px; /* Overlap fix */
+            margin-top: -10px; /* Forces overlap with white block */
             transform: scaleY(-1);
+            position: relative;
+            z-index: 11;
         }
 
-        /* IMAGES */
+        /* IMAGES & VIDEO */
         .full-width-img { width: 100%; height: auto; display: block; }
         .poster-item { margin-bottom: 60px; }
         .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
+        video { width: 100%; height: auto; background: #000; margin-bottom: 20px; }
 
-        /* SECTIONS */
-        .kopi-full-width-section { background-color: #0b0b0b; padding-bottom: 80px; position: relative; z-index: 5; }
-        .football-group { margin-top: 0; }
+        /* KOPI SECTION */
+        .kopi-full-width-section { background-color: #0b0b0b; margin-top: -50px; padding-bottom: 80px; position: relative; z-index: 5; }
 
         /* MOBILE FIXES */
         @media (max-width: 768px) {
-            .portfolio-group { margin-top: 80px; }
+            .portfolio-group { margin-top: 50px; }
             .sketchbook-container { width: 100%; padding: 10px; }
             .title-alignment-layer { position: relative; left: 0; bottom: 0; flex-direction: column; align-items: center; margin-top: -50px; padding: 20px; }
             .port-label { margin: 0; font-size: 4rem; color: #ffffff; }
             .folio-label { font-size: 4rem; }
             
             .bio-section { padding: 40px 20px; }
-            .bio-section h1 { font-size: 2rem; text-align: center; }
+            .bio-section h1 { font-size: 1.8rem; text-align: center; }
             
-            .top-tear, .bottom-tear { height: 120px; }
-            .white-reveal { padding: 30px 20px; }
-            
-            /* Kopi needs to tuck under the bottom tear of the posters */
-            .kopi-full-width-section { margin-top: -60px; }
+            .top-tear, .bottom-tear { height: 120px; margin-bottom: -15px; margin-top: -15px; }
+            .white-reveal { padding: 20px 15px; }
+            .kopi-full-width-section { margin-top: -80px; }
         }
     </style>
 </head>
@@ -147,7 +147,7 @@
         <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <div class="portfolio-group football-group">
+    <div class="portfolio-group" style="margin-top: 0;">
         <div class="top-tear"></div> 
         <section class="white-reveal">
             <div class="container-fluid">
@@ -155,8 +155,10 @@
                     <div class="col-12 poster-item">
                         <img src="images/2021_schedule.png" class="full-width-img" alt="Schedule" />
                     </div>
-                    <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video></div>
-                    <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><video controls preload="auto"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video></div>
+                    <div class="col-md-6"><video controls preload="auto"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video></div>
                 </div>
             </div>
         </section>
