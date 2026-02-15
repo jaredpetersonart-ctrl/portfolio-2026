@@ -6,104 +6,53 @@
     <title>Jared | Portfolio 2026</title>
     <link href="css/bootstrap-5.3.8.css" rel="stylesheet" />
     <style>
-        /* 1. ALLOW THE TEARS TO OVERFLOW THE SIDES */
-        html, body { 
-            background-color: #0b0b0b; 
-            color: #ffffff; 
-            margin: 0; 
-            padding: 0; 
-            font-family: sans-serif; 
-            overflow-x: hidden; /* This stays on the body to prevent side-scrolling */
-        }
-
-        .portfolio-wrapper { 
-            width: 100%; 
-            max-width: 1400px; 
-            margin: 0 auto; 
-            background-color: #121212; 
-            position: relative; 
-            /* REMOVED overflow-x: hidden here so tears can bleed out */
-        }
+        body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
+        .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* HERO & BIO */
-        .hero-section { position: relative; width: 100%; overflow: visible; }
+        /* HERO SECTION */
+        .hero-section { position: relative; width: 100%; z-index: 10; }
         .sketchbook-container { width: 75%; padding: 20px 0 20px 20px; }
         .sketchbook-img { width: 100%; height: auto; display: block; }
         .title-alignment-layer { position: absolute; bottom: 55px; left: -104px; width: 100%; display: flex; align-items: baseline; pointer-events: none; z-index: 50; }
-        .port-label { margin-left: auto; margin-right: 55px; color: #121212; font-weight: 900; font-size: 5.5rem; line-height: 1; letter-spacing: -2px; }
+        .port-label { margin-left: auto; margin-right: 55px; color: #121212; font-weight: 900; font-size: 5.5rem; letter-spacing: -2px; }
         .folio-label { font-weight: 900; font-size: 5.5rem; color: #ffffff; letter-spacing: -2px; }
-        .sub-label { text-transform: uppercase; font-size: 0.7rem; letter-spacing: 4.5px; margin-top: 5px; color: #ffffff; display: block; }
 
-        .bio-section { padding: 40px 60px; position: relative; z-index: 1; margin-bottom: 0; }
+        /* BIO SECTION: Elevated so it stays on top of the paper tear */
+        .bio-section { padding: 40px 60px; position: relative; z-index: 50; } 
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
-        .bio-text { margin-bottom: 20px; line-height: 1.4; }
-        .polaroid-container { position: relative; width: 100%; max-width: 450px; margin: 0 auto; }
-        .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #1a1a1a; }
-        .polaroid-frame { position: relative; width: 100%; z-index: 2; }
 
-        /* REVEAL SYSTEM - THE FULL-BLEED FIX */
-        .portfolio-group { 
-            position: relative; 
-            width: 100%; 
-            margin-top: 180px; 
-            z-index: 20; 
-        }
-        
-        .top-tear { 
-            position: absolute; 
-            bottom: 100%; 
-            left: -5%; /* Pulls the tear slightly left past the edge */
-            width: 110%; /* Makes the tear wider than the container */
-            height: 250px; 
-            background: url('images/paper_tear.png') no-repeat bottom center; 
+        /* THE SINGLE IMAGE SANDWICH (Bottom Layer) */
+        .paper-sandwich-section {
+            width: 100%;
+            background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% auto; 
-            z-index: 25; 
-            margin-bottom: -5px; 
-        }
-        
-        .white-reveal { 
-            background-color: #ffffff; 
-            padding: 80px 60px; 
-            color: #000000; 
-            position: relative; 
-            z-index: 10;
-        }
-        
-        .bottom-tear { 
-            position: absolute;
-            top: 100%;
-            left: -5%; /* Pulls the tear slightly left past the edge */
-            width: 110%; /* Makes the tear wider than the container */
-            height: 250px; 
-            background: url('images/paper_tear.png') no-repeat top center; 
-            background-size: 100% auto; 
-            z-index: 25; 
-            margin-top: -5px; 
-            transform: scaleY(-1);
+            padding-top: 300%; /* Adjust this percentage to fit your image height */
+            margin-top: -220px; 
+            margin-bottom: -180px; 
+            position: relative;
+            z-index: 1; 
         }
 
-        /* IMAGES & SPACING */
-        .full-width-img { width: 100%; height: auto; display: block; }
-        .poster-item { margin-bottom: 60px; }
-        .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
-
+        /* KOPI SECTION: Mid-layer */
         .kopi-full-width-section { 
             background-color: #0b0b0b; 
             position: relative; 
-            z-index: 5; 
-            padding-top: 200px; 
+            z-index: 20; 
+            padding-top: 80px;
             padding-bottom: 80px; 
         }
+        .full-width-img { width: 100%; height: auto; display: block; }
 
-        .football-group { margin-top: 300px !important; }
+        /* FOOTBALL ADJUSTMENT: Ensuring the second tear starts correctly */
+        .football-sandwich {
+            margin-top: -200px !important; /* Pulls the second paper up over the Kopi bottom */
+            z-index: 1 !important;
+        }
 
-        /* MOBILE FIXES */
         @media (max-width: 768px) {
-            .portfolio-group { margin-top: 100px; }
-            .top-tear, .bottom-tear { height: 120px; width: 120%; left: -10%; }
-            .white-reveal { padding: 40px 15px; }
-            .kopi-full-width-section { padding-top: 100px; }
-            .football-group { margin-top: 150px !important; }
+            .paper-sandwich-section { margin-top: -120px; padding-top: 400%; }
+            .title-alignment-layer { position: relative; left: 0; bottom: 0; margin-top: -30px; }
+            .football-sandwich { margin-top: -100px !important; }
         }
     </style>
 </head>
@@ -118,7 +67,6 @@
             <div class="port-label">PORT</div>
             <div class="folio-group">
                 <div class="folio-label">FOLIO</div>
-                <div class="sub-label">ILLUSTRATION &amp; DESIGN</div>
             </div>
         </div>
     </section>
@@ -128,12 +76,12 @@
             <div class="col-lg-7">
                 <h1>Hello! I&apos;m Jared, an illustrator and designer.</h1>
                 <div class="row text-start">
-                    <div class="col-md-6 bio-text">
+                    <div class="col-md-6">
                         <p class="section-header">Experience</p>
                         <p><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
                         <p><strong>2019-2025</strong><br>Graphic Design | Café Kopi LLC</p>
                     </div>
-                    <div class="col-md-6 bio-text">
+                    <div class="col-md-6">
                         <p class="section-header">Achievements</p>
                         <p>2019 - Hypocycloid Winner</p>
                         <p>2020 - Giertz Juried Exhibition</p>
@@ -141,28 +89,12 @@
                 </div>
             </div>
             <div class="col-lg-5">
-                <div class="polaroid-container">
-                    <img src="images/ME.png" class="headshot-overlay" alt="Profile" />
-                    <img src="images/POLAROID_INFO.png" class="polaroid-frame" alt="Contact" />
-                </div>
+                <img src="images/POLAROID_INFO.png" class="full-width-img" alt="Contact" />
             </div>
         </div>
     </section>
 
-    <div class="portfolio-group">
-        <div class="top-tear"></div> 
-        <section class="white-reveal">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6 poster-item"><img src="images/HYPOCYCLOID.png" class="full-width-img poster-shadow" alt="Hypocycloid" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/GARAMOND.png" class="full-width-img poster-shadow" alt="Garamond" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/PYGMALION.png" class="full-width-img poster-shadow" alt="Pygmalion" /></div>
-                    <div class="col-md-6 poster-item"><img src="images/BATMAN_ROBIN.png" class="full-width-img poster-shadow" alt="Batman" /></div>
-                </div>
-            </div>
-        </section>
-        <div class="bottom-tear"></div>
-    </div>
+    <div class="paper-sandwich-section"></div>
 
     <section class="kopi-full-width-section">
         <img src="images/KOPI_HERO.png" class="full-width-img" alt="Kopi Hero" />
@@ -170,23 +102,8 @@
         <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <div class="portfolio-group football-group">
-        <div class="top-tear"></div> 
-        <section class="white-reveal">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12 poster-item">
-                        <img src="images/2021_schedule.png" class="full-width-img" alt="Schedule" />
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video></div>
-                    <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video></div>
-                </div>
-            </div>
-        </section>
-        <div class="bottom-tear"></div>
-    </div>
+    <div class="paper-sandwich-section football-sandwich"></div>
+
 </div>
 
 </body>
