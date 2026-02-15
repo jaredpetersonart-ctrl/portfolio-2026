@@ -7,11 +7,11 @@
     <link href="css/bootstrap-5.3.8.css" rel="stylesheet" />
     <style>
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
-        .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
+        .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; }
         
         /* HERO SECTION */
-        .hero-section { position: relative; width: 100%; display: block; overflow: visible; }
-        .sketchbook-container { width: 75%; position: relative; padding: 20px 0 20px 20px; }
+        .hero-section { position: relative; width: 100%; overflow: visible; }
+        .sketchbook-container { width: 75%; padding: 20px 0 20px 20px; }
         .sketchbook-img { width: 100%; height: auto; display: block; }
         .title-alignment-layer { position: absolute; bottom: 55px; left: -104px; width: 100%; display: flex; align-items: baseline; pointer-events: none; z-index: 50; }
         .port-label { margin-left: auto; margin-right: 55px; color: #121212; font-weight: 900; font-size: 5.5rem; line-height: 1; letter-spacing: -2px; }
@@ -26,36 +26,61 @@
         .headshot-overlay { position: absolute; top: 11%; left: 11%; width: 78%; height: 61%; object-fit: cover; z-index: 1; background: #1a1a1a; }
         .polaroid-frame { position: relative; width: 100%; z-index: 2; }
 
-        /* REVEAL SYSTEM - GAP FIX */
-        .portfolio-group { position: relative; width: 100%; z-index: 10; }
-        .top-tear { position: absolute; top: -300px; left: 0; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat bottom center; background-size: 100% auto; z-index: 100; pointer-events: none; }
-        .white-reveal { background-color: #ffffff; position: relative; z-index: 10; margin-top: 200px; padding: 80px 60px 40px 60px; color: #000000; }
+        /* REVEAL SYSTEM - NO MORE FLOATING GAPS */
+        .portfolio-group { position: relative; width: 100%; margin-top: 200px; }
         
-        /* The "Weld": margin-top -5px forces the tear to overlap the white block slightly */
-        .bottom-tear { position: relative; margin-top: -5px; width: 100%; height: 350px; background: url('images/paper_tear.png') no-repeat top center; background-size: 100% auto; z-index: 100; pointer-events: none; transform: scaleY(-1); }
+        /* Top Tear: Now a direct block before the white section */
+        .top-tear { 
+            width: 100%; 
+            height: 250px; 
+            background: url('images/paper_tear.png') no-repeat bottom center; 
+            background-size: 100% auto; 
+            margin-bottom: -1px; /* Overlap fix */
+        }
+        
+        .white-reveal { 
+            background-color: #ffffff; 
+            padding: 40px 60px; 
+            color: #000000; 
+            position: relative; 
+            z-index: 10;
+        }
+        
+        /* Bottom Tear: Anchored to the bottom of the white block */
+        .bottom-tear { 
+            width: 100%; 
+            height: 250px; 
+            background: url('images/paper_tear.png') no-repeat top center; 
+            background-size: 100% auto; 
+            margin-top: -1px; /* Overlap fix */
+            transform: scaleY(-1);
+        }
 
-        /* POSTERS */
+        /* IMAGES */
         .full-width-img { width: 100%; height: auto; display: block; }
         .poster-item { margin-bottom: 60px; }
-        .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); transition: transform 0.3s ease; }
+        .poster-shadow { box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
 
-        /* KOPI & FOOTBALL */
-        .kopi-full-width-section { position: relative; margin-top: -235px; z-index: 5; background-color: #0b0b0b; padding-bottom: 80px; }
-        .football-group { position: relative; margin-top: -80px; z-index: 10; }
+        /* SECTIONS */
+        .kopi-full-width-section { background-color: #0b0b0b; padding-bottom: 80px; position: relative; z-index: 5; }
+        .football-group { margin-top: 0; }
 
-        /* MOBILE OVERRIDES */
+        /* MOBILE FIXES */
         @media (max-width: 768px) {
+            .portfolio-group { margin-top: 80px; }
             .sketchbook-container { width: 100%; padding: 10px; }
             .title-alignment-layer { position: relative; left: 0; bottom: 0; flex-direction: column; align-items: center; margin-top: -50px; padding: 20px; }
             .port-label { margin: 0; font-size: 4rem; color: #ffffff; }
             .folio-label { font-size: 4rem; }
+            
             .bio-section { padding: 40px 20px; }
-            .bio-section h1 { font-size: 2rem; text-align: center; margin-bottom: 20px; }
-            .white-reveal { margin-top: 150px; padding: 40px 20px; }
-            .top-tear { top: -140px; height: 150px; }
-            .bottom-tear { height: 150px; margin-top: -3px; } /* Mobile weld */
-            .kopi-full-width-section { margin-top: -80px; }
-            .football-group { margin-top: 50px; }
+            .bio-section h1 { font-size: 2rem; text-align: center; }
+            
+            .top-tear, .bottom-tear { height: 120px; }
+            .white-reveal { padding: 30px 20px; }
+            
+            /* Kopi needs to tuck under the bottom tear of the posters */
+            .kopi-full-width-section { margin-top: -60px; }
         }
     </style>
 </head>
@@ -64,7 +89,7 @@
 <div class="portfolio-wrapper">
     <section class="hero-section">
         <div class="sketchbook-container">
-            <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Sketchbook Illustration" />
+            <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Sketchbook" />
         </div>
         <div class="title-alignment-layer">
             <div class="port-label">PORT</div>
@@ -130,8 +155,6 @@
                     <div class="col-12 poster-item">
                         <img src="images/2021_schedule.png" class="full-width-img" alt="Schedule" />
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/MAROON_DEFENSE.MP4" type="video/mp4"></video></div>
                     <div class="col-md-6"><video controls preload="auto" width="100%"><source src="images/THIRD_DOWN.MP4" type="video/mp4"></video></div>
                 </div>
