@@ -9,38 +9,46 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* 1. BIO SECTION */
-        .bio-section { padding: 40px 60px; position: relative; z-index: 200; background-color: transparent; } 
+        /* 1. HERO SECTION - Now Full Width */
+        .hero-section { 
+            background-color: #0b0b0b; 
+            padding: 0; 
+            position: relative; 
+            z-index: 300; 
+        }
+        .sketchbook-img { 
+            width: 100%; /* Expanded to full width */
+            height: auto; 
+            display: block; 
+        }
+
+        /* 2. BIO SECTION - Clean 2x2 Grid */
+        .bio-section { padding: 60px; position: relative; z-index: 200; background-color: transparent; } 
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.85rem; letter-spacing: 1px; }
         .bio-text { font-size: 0.9rem; line-height: 1.4; }
         
-        /* Aligned Skills and Education up 44px for icon room */
+        /* 44px alignment fix */
         .bottom-row-align { margin-top: -44px; }
 
-        /* 2. POSTER SECTION */
+        /* 3. POSTER SECTION - With Shadows */
         .poster-torn-container {
             position: relative;
             z-index: 100; 
-            margin-top: -62px; 
+            margin-top: -60px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
             padding: 240px 80px 100px 80px; 
         }
-
-        /* Added drop shadow to posters */
         .poster-grid-img { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            margin-bottom: 30px; 
+            width: 100%; height: auto; display: block; margin-bottom: 30px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
         }
 
-        /* 3. KOPI SECTION */
-        .kopi-section { background-color: #0b0b0b; padding-bottom: 0px; position: relative; z-index: 10; margin-top: -30px; }
+        /* 4. KOPI SECTION */
+        .kopi-section { background-color: #0b0b0b; position: relative; z-index: 10; margin-top: -30px; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
-        /* 4. FOOTBALL SECTION */
+        /* 5. FOOTBALL SECTION - Fictional stats [cite: 2025-12-18] */
         .football-torn-container {
             position: relative;
             z-index: 100;
@@ -51,8 +59,6 @@
         }
 
         @media (max-width: 768px) {
-            .poster-torn-container { margin-top: -30px; padding: 120px 20px; }
-            .football-torn-container { margin-top: 40px; }
             .bottom-row-align { margin-top: 0; }
         }
     </style>
@@ -61,41 +67,33 @@
 
 <div class="portfolio-wrapper">
     
+    <section class="hero-section">
+        <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Jared Portfolio" />
+    </section>
+
     <section class="container-fluid bio-section">
         <div class="row align-items-start">
             <div class="col-lg-8">
                 <h1>Hello! I&apos;m Jared, an illustrator and designer in Illinois.</h1>
-                
                 <div class="row text-start mt-4 bio-text">
                     <div class="col-md-6 mb-5">
                         <p class="section-header">Experience</p>
-                        <p><strong>2018-</strong><br>
-                        Graphic Designer &amp; Illustrator<br>
-                        Freelance</p>
-                        <p><strong>2019-2025</strong><br>
-                        Graphic Design<br>
-                        Caf&eacute; Kopi LLC</p>
+                        <p><strong>2018-</strong><br>Graphic Designer &amp; Illustrator<br>Freelance</p>
+                        <p><strong>2019-2025</strong><br>Graphic Design<br>Caf&eacute; Kopi LLC</p>
                     </div>
                     <div class="col-md-6 mb-5">
                         <p class="section-header">Achievements</p>
-                        <p>2019 - Parkland College Math Department<br>
-                        Hypocycloid Poster Design Winner</p>
-                        <p>2020 - Giertz Juried Exhibition<br>
-                        Participant Artist</p>
+                        <p>2019 - Parkland College Math Department<br>Hypocycloid Poster Design Winner</p>
+                        <p>2020 - Giertz Juried Exhibition<br>Participant Artist</p>
                     </div>
                     <div class="col-md-6 bottom-row-align">
                         <p class="section-header">Skills</p>
-                        <p>Graphic Design, Digital Illustration, Photography,<br>
-                        Photo Editing, Motion Graphics</p>
+                        <p>Graphic Design, Digital Illustration, Photography,<br>Photo Editing, Motion Graphics</p>
                     </div>
                     <div class="col-md-6 bottom-row-align">
                         <p class="section-header">Education</p>
-                        <p>1995-1997<br>
-                        Parkland College<br>
-                        Mass Communications in the Visual Arts</p>
-                        <p>2019-2020<br>
-                        Parkland College<br>
-                        Graphic Design</p>
+                        <p>1995-1997<br>Parkland College<br>Mass Communications in the Visual Arts</p>
+                        <p>2019-2020<br>Parkland College<br>Graphic Design</p>
                     </div>
                 </div>
             </div>
@@ -129,6 +127,5 @@
     </section>
 
 </div>
-
 </body>
 </html>
