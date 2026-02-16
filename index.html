@@ -9,101 +9,118 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* BIO SECTION - Lowered so paper overlaps it */
-        .bio-section { padding: 40px 60px; position: relative; z-index: 5; } 
-        .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
-
-        /* THE PAPER REVEAL (Now a Container for posters) */
-        .paper-reveal-section {
-            width: 100%;
-            position: relative;
-            z-index: 100; /* Stays on top of Bio and Kopi */
-            margin-top: -240px; 
-            margin-bottom: -200px;
-            /* Using your torn paper as the background for the whole div */
-            background: url('images/WHITE_TORN.png') no-repeat center top;
-            background-size: 100% 100%; /* Stretches the paper to fit the posters */
-            padding: 250px 80px; /* Padding keeps posters away from the ripped edges */
-        }
-
-        .poster-img { width: 100%; height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.2); margin-bottom: 40px; }
+        /* 1. BIO SECTION */
+        .bio-section { padding: 40px 60px; position: relative; z-index: 200; background-color: transparent; } 
+        .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.85rem; letter-spacing: 1px; }
+        .bio-text { font-size: 0.9rem; line-height: 1.4; }
         
-        /* KOPI SECTION */
-        .kopi-full-width-section { background-color: #0b0b0b; position: relative; z-index: 10; padding: 100px 0; }
-        .full-width-img { width: 100%; height: auto; display: block; }
+        /* Aligned Skills and Education up 44px for icon room */
+        .bottom-row-align { margin-top: -44px; }
 
-        /* FOOTBALL SECTION (Fictional 2026 Stats) */
-        .football-section {
-            width: 100%;
+        /* 2. POSTER SECTION */
+        .poster-torn-container {
             position: relative;
-            z-index: 100;
-            margin-top: -180px;
+            z-index: 100; 
+            margin-top: -62px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
-            padding: 200px 80px;
+            padding: 240px 80px 100px 80px; 
+        }
+
+        .poster-grid-img { width: 100%; height: auto; display: block; margin-bottom: 30px; }
+
+        /* 3. KOPI SECTION */
+        .kopi-section { background-color: #0b0b0b; padding-bottom: 0px; position: relative; z-index: 10; margin-top: -30px; }
+        .full-width-img { width: 100%; height: auto; display: block; }
+
+        /* 4. FOOTBALL SECTION */
+        .football-torn-container {
+            position: relative;
+            z-index: 100;
+            margin-top: 84px; 
+            background: url('images/WHITE_TORN.png') no-repeat center top;
+            background-size: 100% 100%;
+            padding: 180px 80px;
         }
 
         @media (max-width: 768px) {
-            .paper-reveal-section { padding: 150px 20px; margin-top: -140px; }
+            .poster-torn-container { margin-top: -30px; padding: 120px 20px; }
+            .football-torn-container { margin-top: 40px; }
+            .bottom-row-align { margin-top: 0; }
         }
     </style>
 </head>
 <body>
 
 <div class="portfolio-wrapper">
-    <section class="hero-section" style="position:relative; z-index:10;">
-        <div class="sketchbook-container" style="width:75%; padding:20px;">
-            <img src="images/SKETCHBOOK.png" style="width:100%;" alt="Sketchbook" />
-        </div>
-        </section>
-
+    
     <section class="container-fluid bio-section">
-        <div class="row align-items-center">
-            <div class="col-lg-7">
-                <h1>Hello! I&apos;m Jared, an illustrator and designer.</h1>
-                <div class="row">
-                    <div class="col-md-6">
+        <div class="row align-items-start">
+            <div class="col-lg-8">
+                <h1>Hello! I&apos;m Jared, an illustrator and designer in Illinois.</h1>
+                
+                <div class="row text-start mt-4 bio-text">
+                    <div class="col-md-6 mb-5">
                         <p class="section-header">Experience</p>
-                        <p><strong>2018-2026</strong><br>Freelance Designer &amp; Illustrator</p>
+                        <p><strong>2018-</strong><br>
+                        Graphic Designer &amp; Illustrator<br>
+                        Freelance</p>
+                        <p><strong>2019-2025</strong><br>
+                        Graphic Design<br>
+                        Caf&eacute; Kopi LLC</p>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-5">
                         <p class="section-header">Achievements</p>
-                        <p>2019 - Hypocycloid Winner</p>
+                        <p>2019 - Parkland College Math Department<br>
+                        Hypocycloid Poster Design Winner</p>
+                        <p>2020 - Giertz Juried Exhibition<br>
+                        Participant Artist</p>
+                    </div>
+                    <div class="col-md-6 bottom-row-align">
+                        <p class="section-header">Skills</p>
+                        <p>Graphic Design, Digital Illustration, Photography,<br>
+                        Photo Editing, Motion Graphics</p>
+                    </div>
+                    <div class="col-md-6 bottom-row-align">
+                        <p class="section-header">Education</p>
+                        <p>1995-1997<br>
+                        Parkland College<br>
+                        Mass Communications in the Visual Arts</p>
+                        <p>2019-2020<br>
+                        Parkland College<br>
+                        Graphic Design</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-5">
-                <img src="images/POLAROID_INFO.png" class="full-width-img" alt="Contact" />
+            <div class="col-lg-4">
+                <img src="images/POLAROID_INFO.png" class="full-width-img" alt="Contact Information" />
             </div>
         </div>
     </section>
 
-    <div class="paper-reveal-section">
+    <section class="poster-torn-container">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6"><img src="images/HYPOCYCLOID.png" class="poster-img" alt="Hypocycloid" /></div>
-                <div class="col-md-6"><img src="images/GARAMOND.png" class="poster-img" alt="Garamond" /></div>
-                <div class="col-md-6"><img src="images/PYGMALION.png" class="poster-img" alt="Pygmalion" /></div>
-                <div class="col-md-6"><img src="images/BATMAN_ROBIN.png" class="poster-img" alt="Batman and Robin" /></div>
+                <div class="col-md-6"><img src="images/HYPOCYCLOID.png" class="poster-grid-img" alt="Hypocycloid" /></div>
+                <div class="col-md-6"><img src="images/GARAMOND.png" class="poster-grid-img" alt="Garamond" /></div>
+                <div class="col-md-6"><img src="images/PYGMALION.png" class="poster-grid-img" alt="Pygmalion" /></div>
+                <div class="col-md-6"><img src="images/BATMAN_ROBIN.png" class="poster-grid-img" alt="Batman Robin" /></div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <section class="kopi-full-width-section">
+    <section class="kopi-section">
         <img src="images/KOPI_HERO.png" class="full-width-img" alt="Kopi Hero" />
         <img src="images/KOPI_WORDMARKS.png" class="full-width-img" alt="Kopi Logos" />
+        <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <div class="football-section">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h2 style="color:black; font-weight:900;">2026 SEASON RECAP</h2>
-                    <img src="images/2021_schedule.png" class="poster-img" style="max-width:800px; margin: 0 auto;" alt="Fictional Stats" />
-                </div>
-            </div>
+    <section class="football-torn-container">
+        <div class="container text-center">
+            <img src="images/2021_schedule.png" class="full-width-img" style="max-width: 900px; margin: 0 auto;" alt="Fictional Stats" />
         </div>
-    </div>
+    </section>
+
 </div>
 
 </body>
