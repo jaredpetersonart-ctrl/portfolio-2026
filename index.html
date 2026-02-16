@@ -9,28 +9,17 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* 1. HERO SECTION - Clean Full Width */
-        .hero-section { 
-            background-color: #0b0b0b; 
-            padding: 0; 
-            position: relative; 
-            z-index: 300; 
-        }
-        .sketchbook-img { 
-            width: 100%; /* Spans the entire width as requested */
-            height: auto; 
-            display: block; 
-        }
+        /* 1. HERO SECTION */
+        .hero-section { background-color: #0b0b0b; padding: 0; position: relative; z-index: 300; }
+        .sketchbook-img { width: 100%; height: auto; display: block; }
 
-        /* 2. BIO SECTION - Clean 2x2 Grid */
+        /* 2. BIO SECTION */
         .bio-section { padding: 60px; position: relative; z-index: 200; background-color: transparent; } 
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.85rem; letter-spacing: 1px; }
         .bio-text { font-size: 0.9rem; line-height: 1.4; }
-        
-        /* Skills/Education alignment fix */
         .bottom-row-align { margin-top: -44px; }
 
-        /* 3. POSTER SECTION - With Shadows */
+        /* 3. POSTER SECTION */
         .poster-torn-container {
             position: relative;
             z-index: 100; 
@@ -48,7 +37,7 @@
         .kopi-section { background-color: #0b0b0b; position: relative; z-index: 10; margin-top: -30px; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
-        /* 5. FOOTBALL SECTION - Fictional stats */
+        /* 5. FOOTBALL SECTION - High School Design Showcase */
         .football-torn-container {
             position: relative;
             z-index: 100;
@@ -57,9 +46,22 @@
             background-size: 100% 100%;
             padding: 180px 80px;
         }
+        /* Unified Shadow and Width for Football Images */
+        .football-work-img { 
+            width: 100%; 
+            max-width: 900px; 
+            height: auto; 
+            margin-bottom: 40px; /* Spacing between the three pieces */
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Added drop shadow */
+        }
 
         @media (max-width: 768px) {
             .bottom-row-align { margin-top: 0; }
+            .poster-torn-container { padding: 120px 20px; }
+            .football-work-img { max-width: 100%; }
         }
     </style>
 </head>
@@ -122,7 +124,11 @@
 
     <section class="football-torn-container">
         <div class="container text-center">
-            <img src="images/2021_schedule.png" class="full-width-img" style="max-width: 900px; margin: 0 auto;" alt="Fictional Stats" />
+            <img src="images/LOGO_CLEANUP.png" class="football-work-img" alt="High School Football Logo Cleanup" />
+            
+            <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Football Schedule" />
+            
+            <img src="images/FRESHMAN.png" class="football-work-img" style="margin-bottom: 0;" alt="Freshman Football Graphic" />
         </div>
     </section>
 
