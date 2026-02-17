@@ -37,31 +37,51 @@
         .kopi-section { background-color: #0b0b0b; position: relative; z-index: 10; margin-top: -30px; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
-        /* 5. FOOTBALL SECTION - High School Design Showcase */
+        /* 5. FOOTBALL SECTION */
         .football-torn-container {
             position: relative;
-            z-index: 100;
+            z-index: 100; 
             margin-top: 84px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
             padding: 180px 80px;
         }
-        /* Unified Shadow and Width for Football Images */
         .football-work-img { 
+            width: 100%; max-width: 900px; height: auto; margin-bottom: 40px; 
+            display: block; margin-left: auto; margin-right: auto; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        }
+
+        /* 6. PHOTOGRAPHY SECTION */
+        .photo-section { 
+            background-color: #0b0b0b; 
+            padding-bottom: 80px; 
+            margin-top: -44px; 
+            position: relative;
+            z-index: 50; 
+        }
+        .photo-hero { 
             width: 100%; 
-            max-width: 900px; 
             height: auto; 
-            margin-bottom: 40px; /* Spacing between the three pieces */
+            display: block;
+        }
+        .photo-grid-container { padding: 60px 80px; }
+        
+        /* Ensures different height photos align at the top */
+        .photo-row-align { align-items: start !important; }
+
+        .photo-item { 
+            width: 100%; 
+            height: auto; 
             display: block; 
-            margin-left: auto; 
-            margin-right: auto; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); /* Added drop shadow */
+            margin-bottom: 30px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
         }
 
         @media (max-width: 768px) {
             .bottom-row-align { margin-top: 0; }
             .poster-torn-container { padding: 120px 20px; }
-            .football-work-img { max-width: 100%; }
+            .photo-grid-container { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -84,7 +104,7 @@
                         <p><strong>2019-2025</strong><br>Graphic Design<br>Caf&eacute; Kopi LLC</p>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <p class="section-header">Achievements</p>
+                        <p><strong>Achievements</strong></p>
                         <p>2019 - Parkland College Math Department<br>Hypocycloid Poster Design Winner</p>
                         <p>2020 - Giertz Juried Exhibition<br>Participant Artist</p>
                     </div>
@@ -125,10 +145,26 @@
     <section class="football-torn-container">
         <div class="container text-center">
             <img src="images/LOGO_CLEANUP.png" class="football-work-img" alt="High School Football Logo Cleanup" />
-            
             <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Football Schedule" />
-            
             <img src="images/FRESHMAN.png" class="football-work-img" style="margin-bottom: 0;" alt="Freshman Football Graphic" />
+        </div>
+    </section>
+
+    <section class="photo-section">
+        <img src="images/DARK_ROOM.png" class="photo-hero" alt="Photography Section Dark Room" />
+        
+        <div class="container-fluid photo-grid-container">
+            <div class="row photo-row-align">
+                <div class="col-md-3 col-6"><img src="images/BRAYDEN.jpg" class="photo-item" alt="Brayden" /></div>
+                <div class="col-md-3 col-6"><img src="images/RAINIER.jpg" class="photo-item" alt="Rainier" /></div>
+                <div class="col-md-3 col-6"><img src="images/GRIFFIN.jpg" class="photo-item" alt="Griffin" /></div>
+                <div class="col-md-3 col-6"><img src="images/FLOWER.jpg" class="photo-item" alt="Flower" /></div>
+                
+                <div class="col-md-3 col-6"><img src="images/HOLE.jpg" class="photo-item" alt="Hole" /></div>
+                <div class="col-md-3 col-6"><img src="images/WASHINGTON.jpg" class="photo-item" alt="Washington" /></div>
+                <div class="col-md-3 col-6"><img src="images/CALI.jpg" class="photo-item" alt="Cali" /></div>
+                <div class="col-md-3 col-6"><img src="images/ZION.jpg" class="photo-item" alt="Zion" /></div>
+            </div>
         </div>
     </section>
 
