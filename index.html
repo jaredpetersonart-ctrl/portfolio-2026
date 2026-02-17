@@ -9,6 +9,14 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
+        /* Sketchy Title Styling */
+        .sketchy-title { 
+            max-width: 400px; 
+            height: auto; 
+            margin-bottom: 20px; 
+            display: block;
+        }
+
         /* 1. HERO SECTION */
         .hero-section { background-color: #0b0b0b; padding: 0; position: relative; z-index: 300; }
         .sketchbook-img { width: 100%; height: auto; display: block; }
@@ -60,21 +68,11 @@
             position: relative;
             z-index: 50; 
         }
-        .photo-hero { 
-            width: 100%; 
-            height: auto; 
-            display: block;
-        }
+        .photo-hero { width: 100%; height: auto; display: block; }
         .photo-grid-container { padding: 60px 80px; }
-        
-        /* Flexbox alignment for varied aspect ratios */
         .photo-row-align { align-items: start !important; }
-
         .photo-item { 
-            width: 100%; 
-            height: auto; 
-            display: block; 
-            margin-bottom: 30px; 
+            width: 100%; height: auto; display: block; margin-bottom: 30px; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
         }
 
@@ -96,7 +94,8 @@
     <section class="container-fluid bio-section">
         <div class="row align-items-start">
             <div class="col-lg-8">
-                <h1>Hello! I&apos;m Jared, an illustrator and designer in Illinois.</h1>
+                <img src="images/TITLE_BIO.png" class="sketchy-title" alt="Hello!" />
+                <h1>I&apos;m Jared, an illustrator and designer in Illinois.</h1>
                 <div class="row text-start mt-4 bio-text">
                     <div class="col-md-6 mb-5">
                         <p class="section-header">Experience</p>
@@ -126,6 +125,9 @@
     </section>
 
     <section class="poster-torn-container">
+        <div class="text-center">
+            <img src="images/POSTERS_TITLE.png" class="sketchy-title d-inline-block" style="margin-bottom: 40px;" alt="Posters" />
+        </div>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-6"><img src="images/HYPOCYCLOID.png" class="poster-grid-img" alt="Hypocycloid" /></div>
@@ -143,6 +145,9 @@
     </section>
 
     <section class="football-torn-container">
+        <div class="text-center">
+            <img src="images/CENTRAL_WORD.png" class="sketchy-title d-inline-block" style="margin-bottom: 40px;" alt="Maroon Football" />
+        </div>
         <div class="container text-center">
             <img src="images/LOGO_CLEANUP.png" class="football-work-img" alt="High School Football Logo Cleanup" />
             <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Football Schedule" />
@@ -152,19 +157,16 @@
 
     <section class="photo-section">
         <img src="images/DARK_ROOM.png" class="photo-hero" alt="Photography Section Dark Room" />
-        
         <div class="container-fluid photo-grid-container">
             <div class="row photo-row-align">
                 <div class="col-md-3 col-6"><img src="images/BRAYDEN.jpg" class="photo-item" alt="Brayden" /></div>
                 <div class="col-md-3 col-6"><img src="images/RAINIER.jpg" class="photo-item" alt="Rainier" /></div>
                 <div class="col-md-3 col-6"><img src="images/GRIFFIN.jpg" class="photo-item" alt="Griffin" /></div>
                 <div class="col-md-3 col-6"><img src="images/FLOWER.jpg" class="photo-item" alt="Flower" /></div>
-                
                 <div class="col-md-3 col-6"><img src="images/HOLE.jpg" class="photo-item" alt="Hole" /></div>
                 <div class="col-md-3 col-6"><img src="images/WASHINGTON.jpg" class="photo-item" alt="Washington" /></div>
                 <div class="col-md-3 col-6"><img src="images/CALI.jpg" class="photo-item" alt="Cali" /></div>
                 <div class="col-md-3 col-6"><img src="images/ZION.jpg" class="photo-item" alt="Zion" /></div>
-
                 <div class="col-md-3 col-6"><img src="images/MOCHA.jpg" class="photo-item" alt="Mocha" /></div>
                 <div class="col-md-3 col-6"><img src="images/MIEL.jpg" class="photo-item" alt="Miel" /></div>
                 <div class="col-md-3 col-6"><img src="images/PANINI.jpg" class="photo-item" alt="Panini" /></div>
