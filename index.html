@@ -9,20 +9,14 @@
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
         
-        /* Sketchy Title Styling */
-        .sketchy-title { 
-            max-width: 400px; 
-            height: auto; 
-            margin-bottom: 20px; 
-            display: block;
-        }
+        .sketchy-title { max-width: 400px; height: auto; margin-bottom: 20px; display: block; }
 
         /* 1. HERO SECTION */
-        .hero-section { background-color: #0b0b0b; padding: 0; position: relative; z-index: 300; }
+        .hero-section { background-color: #0b0b0b; padding: 0; position: relative; z-index: 500; }
         .sketchbook-img { width: 100%; height: auto; display: block; }
 
         /* 2. BIO SECTION */
-        .bio-section { padding: 60px; position: relative; z-index: 200; background-color: transparent; } 
+        .bio-section { padding: 60px; position: relative; z-index: 450; background-color: transparent; } 
         .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.85rem; letter-spacing: 1px; }
         .bio-text { font-size: 0.9rem; line-height: 1.4; }
         .bottom-row-align { margin-top: -44px; }
@@ -30,55 +24,79 @@
         /* 3. POSTER SECTION */
         .poster-torn-container {
             position: relative;
-            z-index: 100; 
+            z-index: 400; 
             margin-top: -60px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
-            padding: 240px 80px 100px 80px; 
+            padding: 180px 80px 100px 80px; 
         }
-        .poster-grid-img { 
-            width: 100%; height: auto; display: block; margin-bottom: 30px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-        }
+        .poster-grid-img { width: 100%; height: auto; display: block; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         /* 4. KOPI SECTION */
-        .kopi-section { background-color: #0b0b0b; position: relative; z-index: 10; margin-top: -30px; }
+        .kopi-section { background-color: #0b0b0b; position: relative; z-index: 350; margin-top: -30px; }
         .full-width-img { width: 100%; height: auto; display: block; }
 
         /* 5. FOOTBALL SECTION */
         .football-torn-container {
             position: relative;
-            z-index: 100; 
+            z-index: 300; 
             margin-top: 84px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
             padding: 180px 80px;
         }
-        .football-work-img { 
-            width: 100%; max-width: 900px; height: auto; margin-bottom: 40px; 
-            display: block; margin-left: auto; margin-right: auto; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        .football-work-img { width: 100%; max-width: 900px; height: auto; margin-bottom: 40px; display: block; margin-left: auto; margin-right: auto; }
+
+        .scoreboard-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 60px auto 0 auto;
         }
+        .scoreboard-img { width: 100%; height: auto; display: block; position: relative; z-index: 2; }
+        
+        .video-overlay-grid {
+            position: absolute;
+            top: 24%; left: 16.6%; width: 66.8%; height: 48%; 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 2px; background: #000; z-index: 1;   
+        }
+        .video-overlay-grid video { width: 100%; height: 100%; object-fit: cover; }
 
         /* 6. PHOTOGRAPHY SECTION */
         .photo-section { 
             background-color: #0b0b0b; 
-            padding-bottom: 80px; 
-            margin-top: -44px; 
-            position: relative;
-            z-index: 50; 
+            padding-bottom: 120px; 
+            margin-top: -88px; 
+            position: relative; 
+            z-index: 250; 
         }
         .photo-hero { width: 100%; height: auto; display: block; }
         .photo-grid-container { padding: 60px 80px; }
         .photo-row-align { align-items: start !important; }
-        .photo-item { 
-            width: 100%; height: auto; display: block; margin-bottom: 30px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5); 
+        .photo-item { width: 100%; height: auto; display: block; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+
+        /* 7. MERCH SECTION */
+        .merch-torn-container {
+            position: relative;
+            z-index: 600; 
+            margin-top: -100px; 
+            background: url('images/WHITE_TORN.png') no-repeat center top;
+            background-size: 100% 100%;
+            padding: 180px 80px 140px 80px; 
+        }
+        .merch-hero-img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+            box-shadow: 0 15px 45px rgba(0,0,0,0.15); 
         }
 
         @media (max-width: 768px) {
             .bottom-row-align { margin-top: 0; }
-            .poster-torn-container { padding: 120px 20px; }
+            .poster-torn-container, .football-torn-container, .merch-torn-container { padding: 120px 20px; }
             .photo-grid-container { padding: 40px 20px; }
         }
     </style>
@@ -104,17 +122,16 @@
                     </div>
                     <div class="col-md-6 mb-5">
                         <p class="section-header">Achievements</p>
-                        <p>2019 - Parkland College Math Department<br>Hypocycloid Poster Design Winner</p>
-                        <p>2020 - Giertz Juried Exhibition<br>Participant Artist</p>
+                        <p>2019 - Parkland College Math Department Winner</p>
+                        <p>2020 - Giertz Juried Exhibition Participant</p>
                     </div>
                     <div class="col-md-6 bottom-row-align">
                         <p class="section-header">Skills</p>
-                        <p>Graphic Design, Digital Illustration, Photography,<br>Photo Editing, Motion Graphics</p>
+                        <p>Graphic Design, Digital Illustration, Photography, Motion Graphics</p>
                     </div>
                     <div class="col-md-6 bottom-row-align">
                         <p class="section-header">Education</p>
-                        <p>1995-1997<br>Parkland College<br>Mass Communications in the Visual Arts</p>
-                        <p>2019-2020<br>Parkland College<br>Graphic Design</p>
+                        <p>Parkland College<br>Graphic Design &amp; Visual Arts</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +143,7 @@
 
     <section class="poster-torn-container">
         <div class="text-center">
-            <img src="images/POSTERS_TITLE.png" class="sketchy-title d-inline-block" style="margin-bottom: 40px;" alt="Posters" />
+            <img src="images/POSTERS_TITLE.png" class="sketchy-title d-inline-block" style="margin-bottom: 60px;" alt="Posters" />
         </div>
         <div class="container-fluid">
             <div class="row">
@@ -149,14 +166,24 @@
             <img src="images/CENTRAL_WORD.png" class="sketchy-title d-inline-block" style="margin-bottom: 40px;" alt="Maroon Football" />
         </div>
         <div class="container text-center">
-            <img src="images/LOGO_CLEANUP.png" class="football-work-img" alt="High School Football Logo Cleanup" />
-            <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Football Schedule" />
-            <img src="images/FRESHMAN.png" class="football-work-img" style="margin-bottom: 0;" alt="Freshman Football Graphic" />
+            <img src="images/LOGO_CLEANUP.png" class="football-work-img" alt="Logo Cleanup" />
+            <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Schedule" />
+            <img src="images/FRESHMAN.png" class="football-work-img" alt="Freshman Flyer" />
+            
+            <div class="scoreboard-wrapper">
+                <img src="images/SCORE_BOARD.png" class="scoreboard-img" alt="Scoreboard Frame" />
+                <div class="video-overlay-grid">
+                    <video autoplay muted loop playsinline><source src="videos/FOURTH_QUARTER.MP4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline><source src="videos/RISEUP.MP4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline><source src="videos/THIRD_DOWN.MP4" type="video/mp4"></video>
+                    <video autoplay muted loop playsinline><source src="videos/MAROON_DEFENSE.MP4" type="video/mp4"></video>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="photo-section">
-        <img src="images/DARK_ROOM.png" class="photo-hero" alt="Photography Section Dark Room" />
+        <img src="images/DARK_ROOM.png" class="photo-hero" alt="Dark Room Hero" />
         <div class="container-fluid photo-grid-container">
             <div class="row photo-row-align">
                 <div class="col-md-3 col-6"><img src="images/BRAYDEN.jpg" class="photo-item" alt="Brayden" /></div>
@@ -172,6 +199,15 @@
                 <div class="col-md-3 col-6"><img src="images/PANINI.jpg" class="photo-item" alt="Panini" /></div>
                 <div class="col-md-3 col-6"><img src="images/SCONES.jpg" class="photo-item" alt="Scones" /></div>
             </div>
+        </div>
+    </section>
+
+    <section class="merch-torn-container">
+        <div class="text-center">
+            <img src="images/SHIRT_HALFTONE.png" class="sketchy-title d-inline-block" style="margin-bottom: 60px;" alt="Merch Title" />
+        </div>
+        <div class="container-fluid">
+            <img src="images/SHIRT_HERO.png" class="merch-hero-img" alt="Custom T-Shirt Hero" />
         </div>
     </section>
 
