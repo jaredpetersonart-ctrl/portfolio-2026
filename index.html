@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jared | Portfolio 2026</title>
     <link href="css/bootstrap-5.3.8.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         body { background-color: #0b0b0b; color: #ffffff; margin: 0; padding: 0; font-family: sans-serif; overflow-x: hidden; }
         .portfolio-wrapper { width: 100%; max-width: 1400px; margin: 0 auto; background-color: #121212; position: relative; }
@@ -71,18 +73,18 @@
             padding-bottom: 120px; 
             margin-top: -88px; 
             position: relative; 
-            z-index: 250; 
+            z-index: 700; /* High, but lower than Merch */
         }
         .photo-hero { width: 100%; height: auto; display: block; }
         .photo-grid-container { padding: 60px 80px; }
         .photo-row-align { align-items: start !important; }
         .photo-item { width: 100%; height: auto; display: block; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
-        /* 7. MERCH SECTION */
+        /* 7. MERCH SECTION - Z-INDEX BUMPED TO 800 TO RESTORE TEAR */
         .merch-torn-container {
             position: relative;
-            z-index: 600; 
-            margin-top: -100px; 
+            z-index: 800; 
+            margin-top: -120px; /* Slight increase to ensure overlap */
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
             padding: 180px 80px 140px 80px; 
@@ -92,6 +94,21 @@
             height: auto; 
             display: block; 
             box-shadow: 0 15px 45px rgba(0,0,0,0.15); 
+        }
+
+        /* 8. FOOTER SECTION */
+        .footer-section {
+            background-color: #0b0b0b;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            z-index: 900;
+        }
+        .thank-you-img {
+            max-width: 500px;
+            width: 90%;
+            height: auto;
+            display: inline-block;
         }
 
         @media (max-width: 768px) {
@@ -109,7 +126,7 @@
         <img src="images/SKETCHBOOK.png" class="sketchbook-img" alt="Jared Portfolio" />
     </section>
 
-    <section class="container-fluid bio-section">
+    <section class="container-fluid bio-section" data-aos="fade-in">
         <div class="row align-items-start">
             <div class="col-lg-8">
                 <h1>I&apos;m Jared, an illustrator and designer in Illinois.</h1>
@@ -140,27 +157,27 @@
         </div>
     </section>
 
-    <section class="poster-torn-container">
+    <section class="poster-torn-container" data-aos="fade-up" data-aos-duration="1000">
         <div class="text-center">
             <img src="images/POSTERS_TITLE.png" class="sketchy-title d-inline-block" style="margin-bottom: 60px;" alt="Posters" />
         </div>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6"><img src="images/HYPOCYCLOID.png" class="poster-grid-img" alt="Hypocycloid" /></div>
-                <div class="col-md-6"><img src="images/GARAMOND.png" class="poster-grid-img" alt="Garamond" /></div>
-                <div class="col-md-6"><img src="images/PYGMALION.png" class="poster-grid-img" alt="Pygmalion" /></div>
-                <div class="col-md-6"><img src="images/BATMAN_ROBIN.png" class="poster-grid-img" alt="Batman Robin" /></div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200"><img src="images/HYPOCYCLOID.png" class="poster-grid-img" alt="Hypocycloid" /></div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400"><img src="images/GARAMOND.png" class="poster-grid-img" alt="Garamond" /></div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="200"><img src="images/PYGMALION.png" class="poster-grid-img" alt="Pygmalion" /></div>
+                <div class="col-md-6" data-aos="zoom-in" data-aos-delay="400"><img src="images/BATMAN_ROBIN.png" class="poster-grid-img" alt="Batman Robin" /></div>
             </div>
         </div>
     </section>
 
-    <section class="kopi-section">
+    <section class="kopi-section" data-aos="fade-in">
         <img src="images/KOPI_HERO.png" class="full-width-img" alt="Kopi Hero" />
         <img src="images/KOPI_WORDMARKS.png" class="full-width-img" alt="Kopi Logos" />
         <img src="images/KOPI_INSTA.png" class="full-width-img" alt="Kopi Instagram" />
     </section>
 
-    <section class="football-torn-container">
+    <section class="football-torn-container" data-aos="slide-right">
         <div class="text-center">
             <img src="images/CENTRAL_WORD.png" class="sketchy-title d-inline-block" style="margin-bottom: 40px;" alt="Maroon Football" />
         </div>
@@ -169,7 +186,7 @@
             <img src="images/2021_schedule.png" class="football-work-img" alt="2021 Schedule" />
             <img src="images/FRESHMAN.png" class="football-work-img" alt="Freshman Flyer" />
             
-            <div class="scoreboard-wrapper">
+            <div class="scoreboard-wrapper" data-aos="flip-up">
                 <img src="images/SCORE_BOARD.png" class="scoreboard-img" alt="Scoreboard Frame" />
                 <div class="video-overlay-grid">
                     <video autoplay muted loop playsinline><source src="videos/FOURTH_QUARTER.MP4" type="video/mp4"></video>
@@ -182,34 +199,50 @@
     </section>
 
     <section class="photo-section">
-        <img src="images/DARK_ROOM.png" class="photo-hero" alt="Dark Room Hero" />
+        <img src="images/DARK_ROOM.png" class="photo-hero" alt="Dark Room Hero" data-aos="fade-down" />
         <div class="container-fluid photo-grid-container">
             <div class="row photo-row-align">
-                <div class="col-md-3 col-6"><img src="images/BRAYDEN.jpg" class="photo-item" alt="Brayden" /></div>
-                <div class="col-md-3 col-6"><img src="images/RAINIER.jpg" class="photo-item" alt="Rainier" /></div>
-                <div class="col-md-3 col-6"><img src="images/GRIFFIN.jpg" class="photo-item" alt="Griffin" /></div>
-                <div class="col-md-3 col-6"><img src="images/FLOWER.jpg" class="photo-item" alt="Flower" /></div>
-                <div class="col-md-3 col-6"><img src="images/HOLE.jpg" class="photo-item" alt="Hole" /></div>
-                <div class="col-md-3 col-6"><img src="images/WASHINGTON.jpg" class="photo-item" alt="Washington" /></div>
-                <div class="col-md-3 col-6"><img src="images/CALI.jpg" class="photo-item" alt="Cali" /></div>
-                <div class="col-md-3 col-6"><img src="images/ZION.jpg" class="photo-item" alt="Zion" /></div>
-                <div class="col-md-3 col-6"><img src="images/MOCHA.jpg" class="photo-item" alt="Mocha" /></div>
-                <div class="col-md-3 col-6"><img src="images/MIEL.jpg" class="photo-item" alt="Miel" /></div>
-                <div class="col-md-3 col-6"><img src="images/PANINI.jpg" class="photo-item" alt="Panini" /></div>
-                <div class="col-md-3 col-6"><img src="images/SCONES.jpg" class="photo-item" alt="Scones" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><img src="images/BRAYDEN.jpg" class="photo-item" alt="Brayden" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><img src="images/RAINIER.jpg" class="photo-item" alt="Rainier" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><img src="images/GRIFFIN.jpg" class="photo-item" alt="Griffin" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400"><img src="images/FLOWER.jpg" class="photo-item" alt="Flower" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><img src="images/HOLE.jpg" class="photo-item" alt="Hole" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><img src="images/WASHINGTON.jpg" class="photo-item" alt="Washington" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><img src="images/CALI.jpg" class="photo-item" alt="Cali" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400"><img src="images/ZION.jpg" class="photo-item" alt="Zion" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><img src="images/MOCHA.jpg" class="photo-item" alt="Mocha" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><img src="images/MIEL.jpg" class="photo-item" alt="Miel" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><img src="images/PANINI.jpg" class="photo-item" alt="Panini" /></div>
+                <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400"><img src="images/SCONES.jpg" class="photo-item" alt="Scones" /></div>
             </div>
         </div>
     </section>
 
-    <section class="merch-torn-container">
+    <section class="merch-torn-container" data-aos="zoom-in-up">
         <div class="text-center">
-            <img src="images/SHIRT_HALFTONE.png" class="sketchy-title d-inline-block" style="margin-bottom: 60px;" alt="Merch Title" />
+            <img src="images/SHIRT_HALFTONE.png" class="sketchy-title d-inline-block" style="margin-bottom: 60px;" alt="Merch Title" data-aos="zoom-in" data-aos-delay="500" />
         </div>
         <div class="container-fluid">
             <img src="images/SHIRT_HERO.png" class="merch-hero-img" alt="Custom T-Shirt Hero" />
         </div>
     </section>
 
+    <footer class="footer-section">
+        <div class="container">
+            <img src="images/THANK_YOU.png" class="thank-you-img" alt="Thank You" data-aos="fade-up" data-aos-duration="1500" />
+        </div>
+    </footer>
+
 </div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
+
 </body>
 </html>
