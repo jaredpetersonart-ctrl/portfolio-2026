@@ -18,10 +18,10 @@
         .sketchbook-img { width: 100%; height: auto; display: block; }
 
         /* 2. BIO SECTION */
-        .bio-section { padding: 60px; position: relative; z-index: 450; background-color: transparent; } 
-        .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.85rem; letter-spacing: 1px; }
-        .bio-text { font-size: 0.9rem; line-height: 1.4; }
-        .bottom-row-align { margin-top: -44px; }
+        .bio-section { padding: 80px 60px; position: relative; z-index: 450; background-color: transparent; } 
+        .section-header { font-weight: 800; text-transform: uppercase; margin-bottom: 12px; color: #e83e35; font-size: 0.9rem; letter-spacing: 1px; }
+        .bio-text { font-size: 0.95rem; line-height: 1.5; }
+        .bio-entry { margin-bottom: 25px; }
 
         /* 3. POSTER SECTION */
         .poster-torn-container {
@@ -73,18 +73,18 @@
             padding-bottom: 120px; 
             margin-top: -88px; 
             position: relative; 
-            z-index: 700; /* High, but lower than Merch */
+            z-index: 700; 
         }
         .photo-hero { width: 100%; height: auto; display: block; }
         .photo-grid-container { padding: 60px 80px; }
         .photo-row-align { align-items: start !important; }
         .photo-item { width: 100%; height: auto; display: block; margin-bottom: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 
-        /* 7. MERCH SECTION - Z-INDEX BUMPED TO 800 TO RESTORE TEAR */
+        /* 7. MERCH SECTION */
         .merch-torn-container {
             position: relative;
             z-index: 800; 
-            margin-top: -120px; /* Slight increase to ensure overlap */
+            margin-top: -120px; 
             background: url('images/WHITE_TORN.png') no-repeat center top;
             background-size: 100% 100%;
             padding: 180px 80px 140px 80px; 
@@ -112,9 +112,9 @@
         }
 
         @media (max-width: 768px) {
-            .bottom-row-align { margin-top: 0; }
             .poster-torn-container, .football-torn-container, .merch-torn-container { padding: 120px 20px; }
             .photo-grid-container { padding: 40px 20px; }
+            .bio-section { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -127,32 +127,37 @@
     </section>
 
     <section class="container-fluid bio-section" data-aos="fade-in">
-        <div class="row align-items-start">
+        <div class="row">
             <div class="col-lg-8">
-                <h1>I&apos;m Jared, an illustrator and designer in Illinois.</h1>
-                <div class="row text-start mt-4 bio-text">
-                    <div class="col-md-6 mb-5">
-                        <p class="section-header">Experience</p>
-                        <p><strong>2018-</strong><br>Graphic Designer &amp; Illustrator<br>Freelance</p>
-                        <p><strong>2019-2025</strong><br>Graphic Design<br>Caf&eacute; Kopi LLC</p>
+                <h1 style="margin-bottom: 50px;">I&apos;m Jared, an illustrator and designer in Illinois.</h1>
+                <div class="row bio-text">
+                    <div class="col-md-6">
+                        <div class="bio-entry">
+                            <p class="section-header">Experience</p>
+                            <p><strong>2018-</strong><br>Graphic Designer &amp; Illustrator<br>Freelance</p>
+                            <p><strong>2019-2025</strong><br>Graphic Designer<br>Caf&eacute; Kopi LLC</p>
+                        </div>
+                        <div class="bio-entry">
+                            <p class="section-header">Skills</p>
+                            <p>Graphic Design, Digital Illustration, Photography, Motion Graphics</p>
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-5">
-                        <p class="section-header">Achievements</p>
-                        <p>2019 - Parkland College Math Department Winner</p>
-                        <p>2020 - Giertz Juried Exhibition Participant</p>
-                    </div>
-                    <div class="col-md-6 bottom-row-align">
-                        <p class="section-header">Skills</p>
-                        <p>Graphic Design, Digital Illustration, Photography, Motion Graphics</p>
-                    </div>
-                    <div class="col-md-6 bottom-row-align">
-                        <p class="section-header">Education</p>
-                        <p>Parkland College<br>Graphic Design &amp; Visual Arts</p>
+                    <div class="col-md-6">
+                        <div class="bio-entry">
+                            <p class="section-header">Education</p>
+                            <p><strong>1995-1997</strong><br>Parkland College<br>Mass Communications in the Visual Arts</p>
+                            <p><strong>2019-2020</strong><br>Parkland College<br>Graphic Design</p>
+                        </div>
+                        <div class="bio-entry">
+                            <p class="section-header">Achievements</p>
+                            <p><strong>2019 - Parkland College Math Department</strong><br>Hypocycloid Poster Winner</p>
+                            <p><strong>2019 - Giertz Juried Exhibition</strong><br>Participant Artist</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <img src="images/POLAROID_INFO.png" class="full-width-img" alt="Contact Information" />
+            <div class="col-lg-4 d-flex align-items-center justify-content-center">
+                <img src="images/POLAROID_INFO.png" class="full-width-img" style="max-width: 350px;" alt="Contact Information" />
             </div>
         </div>
     </section>
